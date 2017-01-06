@@ -1,0 +1,519 @@
+-- phpMyAdmin SQL Dump
+-- version 4.2.12deb2+deb8u1build0.15.04.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Dec 02, 2016 at 02:17 PM
+-- Server version: 5.6.28-0ubuntu0.15.04.1
+-- PHP Version: 5.6.4-4ubuntu6.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `adtracker2015`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cache`
+--
+
+CREATE TABLE IF NOT EXISTS `cache` (
+  `key` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `value` text COLLATE utf8_unicode_ci NOT NULL,
+  `expiration` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `campaigns`
+--
+
+CREATE TABLE IF NOT EXISTS `campaigns` (
+`campaign_id` int(11) NOT NULL,
+  `campaign_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `campaign_template` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `fail_url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `success_url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `parameter` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `mobile_or_url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `urls` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  `campaign_category` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `campaign_url` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=135 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `campaigns`
+--
+
+INSERT INTO `campaigns` (`campaign_id`, `campaign_name`, `campaign_template`, `fail_url`, `success_url`, `parameter`, `mobile_or_url`, `urls`, `created_at`, `updated_at`, `campaign_category`, `campaign_url`) VALUES
+(132, 'prbt3camp', 'prbt3', '', '', '', 'mobile', '', '2016-11-17 05:52:33', '2016-11-17 05:52:33', 'Prbt', 'localhost/prbt3camp/prbt3.php'),
+(133, 'JACcamp', 'JAC', '', '', '', 'mobile', '', '2016-11-17 05:53:46', '2016-11-17 05:53:46', 'Follo', 'localhost/JACcamp/JAC.php'),
+(134, 'dia_miv_camp', 'dia_midv', 'http://www.balamu.lk/ads/balamuredirection', 'http://www.dialogin.lk/Defaultx.aspx?mnu=ehome&appid=28&spid=38&channel=!WAP!&action=sub&planid=!PLANID!&cc=28&event=Service_midvids&prid=E1098', '', 'mobile', '', '2016-11-17 05:55:47', '2016-11-17 05:55:47', 'AddPlatForm', 'localhost/dia_miv_camp/dia_midv.php');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `click_logs`
+--
+
+CREATE TABLE IF NOT EXISTS `click_logs` (
+`id` int(10) NOT NULL,
+  `server` varchar(500) NOT NULL,
+  `landing_page` varchar(500) DEFAULT NULL,
+  `agent_name` varchar(100) DEFAULT NULL,
+  `user_ip` varchar(50) DEFAULT NULL,
+  `HTTP_referer` varchar(500) DEFAULT NULL,
+  `phone_number` varchar(50) NOT NULL,
+  `user_agent` varchar(100) NOT NULL,
+  `browser` varchar(100) NOT NULL,
+  `model_name` varchar(50) NOT NULL,
+  `source` varchar(10) NOT NULL,
+  `subscribe` varchar(10) NOT NULL,
+  `click_id` varchar(200) DEFAULT NULL,
+  `created_date` datetime NOT NULL,
+  `affID` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4267489 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `click_logs`
+--
+
+INSERT INTO `click_logs` (`id`, `server`, `landing_page`, `agent_name`, `user_ip`, `HTTP_referer`, `phone_number`, `user_agent`, `browser`, `model_name`, `source`, `subscribe`, `click_id`, `created_date`, `affID`) VALUES
+(4267465, 'localhost:8000/autodetect', 'autodetect', '', '127.0.0.1', 'http://localhost/dia_gree_camp/dia_gree.php', '1111111111', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/5', 'Chrome', '', 'View', '', NULL, '2016-11-17 04:36:13', ''),
+(4267466, 'localhost:8000/autodetect', 'autodetect', '', '127.0.0.1', 'http://localhost/dia_gree_camp/dia_gree.php', '1111111111', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/5', 'Chrome', '', 'View', '', NULL, '2016-11-17 04:36:13', ''),
+(4267467, 'localhost:8000/autodetect', 'autodetect', '', '127.0.0.1', 'http://localhost/dia_gree_camp/dia_gree.php', '1111111111', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/5', 'Chrome', '', 'View', '', NULL, '2016-11-17 05:08:21', ''),
+(4267468, 'localhost:8000/autodetect', 'autodetect', '', '127.0.0.1', 'http://localhost/dia_gree_camp/dia_gree.php', '1111111111', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/5', 'Chrome', '', 'View', '', NULL, '2016-11-17 05:08:21', ''),
+(4267469, 'localhost:8000/autodetect', 'autodetect', '', '127.0.0.1', 'http://localhost/dia_gree_camp/dia_gree.php', '1111111111', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/5', 'Chrome', '', 'Click', 'true', '', '2016-11-17 05:08:22', NULL),
+(4267470, 'localhost:8000/autodetect', 'autodetect', '', '127.0.0.1', 'http://localhost/dia_gree_camp/dia_gree.php', '1111111111', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/5', 'Chrome', '', 'View', '', NULL, '2016-11-17 05:08:28', ''),
+(4267471, 'localhost:8000/autodetect', 'autodetect', '', '127.0.0.1', 'http://localhost/dia_gree_camp/dia_gree.php', '1111111111', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/5', 'Chrome', '', 'View', '', NULL, '2016-11-17 05:08:28', ''),
+(4267472, 'localhost:8000/autodetect', 'autodetect', '', '127.0.0.1', 'http://localhost/dia_gree_camp/dia_gree.php', '1111111111', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/5', 'Chrome', '', 'View', '', NULL, '2016-11-17 05:09:46', ''),
+(4267473, 'localhost:8000/autodetect', 'autodetect', '', '127.0.0.1', 'http://localhost/dia_gree_camp/dia_gree.php', '1111111111', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/5', 'Chrome', '', 'View', '', NULL, '2016-11-17 05:09:46', ''),
+(4267474, 'localhost:8000/autodetect', 'autodetect', '', '127.0.0.1', 'http://localhost/dia_gree_camp/dia_gree.php', '1111111111', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/5', 'Chrome', '', 'Click', 'true', '', '2016-11-17 05:10:13', NULL),
+(4267475, 'localhost:8000/autodetect', 'autodetect', '', '127.0.0.1', 'http://localhost/dia_gree_camp/dia_gree.php', '0', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/5', 'Chrome', '', 'View', '', NULL, '2016-11-17 05:36:25', ''),
+(4267476, 'localhost:8000/autodetect', 'autodetect', '', '127.0.0.1', 'http://localhost/dia_gree_camp/dia_gree.php', '0', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/5', 'Chrome', '', 'View', '', NULL, '2016-11-17 05:36:25', ''),
+(4267477, 'localhost:8000/autodetect', 'autodetect', '', '127.0.0.1', 'http://localhost/dia_gree_camp/dia_gree.php', '0', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/5', 'Chrome', '', 'View', '', NULL, '2016-11-17 05:36:28', ''),
+(4267478, 'localhost:8000/autodetect', 'autodetect', '', '127.0.0.1', 'http://localhost/dia_gree_camp/dia_gree.php', '0', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/5', 'Chrome', '', 'View', '', NULL, '2016-11-17 05:36:28', ''),
+(4267479, 'localhost:8000/autodetect', 'autodetect', '', '127.0.0.1', 'http://localhost/dia_gree_camp/dia_gree.php', '0', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/5', 'Chrome', '', 'Click', 'true', '', '2016-11-17 05:36:29', NULL),
+(4267480, 'localhost:8000/autodetect', 'autodetect', '', '127.0.0.1', 'http://localhost/prbt3camp/prbt3.php', '0', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/5', 'Chrome', '', 'View', '', NULL, '2016-11-17 05:53:04', ''),
+(4267481, 'localhost:8000/autodetect', 'autodetect', '', '127.0.0.1', 'http://localhost/prbt3camp/prbt3.php', '0', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/5', 'Chrome', '', 'View', '', NULL, '2016-11-17 05:53:05', ''),
+(4267482, 'localhost:8000/autodetect', 'autodetect', '', '127.0.0.1', 'http://localhost/JACcamp/JAC.php', '0', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/5', 'Chrome', '', 'View', '', NULL, '2016-11-17 05:53:58', ''),
+(4267483, 'localhost:8000/autodetect', 'autodetect', '', '127.0.0.1', 'http://localhost/JACcamp/JAC.php', '0', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/5', 'Chrome', '', 'View', '', NULL, '2016-11-17 05:53:58', ''),
+(4267484, 'localhost:8000/autodetect', 'autodetect', '', '127.0.0.1', 'http://localhost/JACcamp/JAC.php', '0', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/5', 'Chrome', '', 'Click', 'true', '', '2016-11-17 05:53:59', ''),
+(4267485, 'localhost:8000/autodetect', 'autodetect', '', '127.0.0.1', 'http://localhost/JACcamp/JAC.php', '0', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/5', 'Chrome', '', 'Click', 'true', '', '2016-11-17 05:54:03', ''),
+(4267486, 'localhost:8000/autodetect', 'autodetect', '', '127.0.0.1', 'http://localhost/dia_miv_camp/dia_midv.php', '0', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/5', 'Chrome', '', 'View', '', NULL, '2016-11-17 05:56:21', ''),
+(4267487, 'localhost:8000/autodetect', 'autodetect', '', '127.0.0.1', 'http://localhost/dia_miv_camp/dia_midv.php', '0', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/5', 'Chrome', '', 'View', '', NULL, '2016-11-17 05:56:21', ''),
+(4267488, 'localhost:8000/autodetect', 'autodetect', '', '127.0.0.1', 'http://localhost/dia_miv_camp/dia_midv.php', '0', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/5', 'Chrome', '', 'Click', 'true', '', '2016-11-17 05:56:24', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `click_logs_archive`
+--
+
+CREATE TABLE IF NOT EXISTS `click_logs_archive` (
+`id` int(10) NOT NULL,
+  `server` varchar(500) NOT NULL,
+  `landing_page` varchar(500) DEFAULT NULL,
+  `agent_name` varchar(100) DEFAULT NULL,
+  `user_ip` varchar(50) DEFAULT NULL,
+  `HTTP_referer` varchar(500) DEFAULT NULL,
+  `phone_number` varchar(50) NOT NULL,
+  `user_agent` varchar(100) NOT NULL,
+  `browser` varchar(100) NOT NULL,
+  `model_name` varchar(50) NOT NULL,
+  `source` varchar(10) NOT NULL,
+  `subscribe` varchar(10) NOT NULL,
+  `click_id` varchar(200) DEFAULT NULL,
+  `created_date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `follo_data`
+--
+
+CREATE TABLE IF NOT EXISTS `follo_data` (
+`id` int(255) NOT NULL,
+  `mobile_number` varchar(20) DEFAULT NULL,
+  `click_id` varchar(200) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `created_time` varchar(250) DEFAULT NULL,
+  `updated_time` varchar(255) DEFAULT NULL
+) ENGINE=MyISAM AUTO_INCREMENT=164412 DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migrations`
+--
+
+CREATE TABLE IF NOT EXISTS `migrations` (
+  `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `migrations`
+--
+
+INSERT INTO `migrations` (`migration`, `batch`) VALUES
+('2016_10_25_120348_update_templates_table', 1),
+('2014_10_12_000000_create_users_table', 2),
+('2016_10_26_103509_create_cache_table', 3),
+('2016_10_26_113807_create_tests_table', 3),
+('2016_10_26_114334_create_template_table', 4),
+('2016_10_27_112555_create_Profile_table', 4),
+('2016_10_28_043001_create_campaign_table', 4),
+('2016_11_10_075753_create_users_table', 5),
+('2016_11_10_075812_create_roles_table', 5),
+('2016_11_10_075832_create_permissions_table', 5),
+('2016_11_10_075844_create_permission_role_table', 5),
+('2016_11_10_075901_create_role_user_table', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_resets`
+--
+
+CREATE TABLE IF NOT EXISTS `password_resets` (
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `permissions`
+--
+
+CREATE TABLE IF NOT EXISTS `permissions` (
+`id` int(10) unsigned NOT NULL,
+  `permission_title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `permission_slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `permission_description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `permission_role`
+--
+
+CREATE TABLE IF NOT EXISTS `permission_role` (
+`id` int(10) unsigned NOT NULL,
+  `permission_id` int(11) NOT NULL,
+  `role_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `provider_ip_table`
+--
+
+CREATE TABLE IF NOT EXISTS `provider_ip_table` (
+`id` int(11) NOT NULL,
+  `provider` varchar(20) NOT NULL,
+  `ip_range` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `provider_sms_data`
+--
+
+CREATE TABLE IF NOT EXISTS `provider_sms_data` (
+`id` int(10) NOT NULL,
+  `provider` varchar(20) NOT NULL,
+  `sms_number` int(11) NOT NULL,
+  `sms_data` varchar(50) NOT NULL,
+  `redirect_url` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `roles`
+--
+
+CREATE TABLE IF NOT EXISTS `roles` (
+`id` int(10) unsigned NOT NULL,
+  `role_title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `role_slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `role_user`
+--
+
+CREATE TABLE IF NOT EXISTS `role_user` (
+`id` int(10) unsigned NOT NULL,
+  `role_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `secure_bill_data`
+--
+
+CREATE TABLE IF NOT EXISTS `secure_bill_data` (
+`id` int(10) NOT NULL,
+  `click_id` varchar(100) NOT NULL,
+  `response` varchar(500) NOT NULL,
+  `created_time` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `secure_bill_data_prbt`
+--
+
+CREATE TABLE IF NOT EXISTS `secure_bill_data_prbt` (
+`id` int(10) NOT NULL,
+  `click_id` varchar(100) NOT NULL,
+  `response` varchar(500) NOT NULL,
+  `created_date` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `templates`
+--
+
+CREATE TABLE IF NOT EXISTS `templates` (
+`tmp_id` int(11) NOT NULL,
+  `tmp_name` text COLLATE utf8_unicode_ci NOT NULL,
+  `tmp_url` text COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB AUTO_INCREMENT=2358 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `templates`
+--
+
+INSERT INTO `templates` (`tmp_id`, `tmp_name`, `tmp_url`, `created_at`, `updated_at`) VALUES
+(2352, 'DP', 'DP', '2016-11-16 18:04:35', '2016-11-16 18:04:35'),
+(2353, 'prbt6', 'prbt6', '2016-11-16 18:05:11', '2016-11-16 18:05:11'),
+(2354, 'prbt3', 'prbt3', '2016-11-17 05:52:17', '2016-11-17 05:52:17'),
+(2355, 'JAC', 'JAC', '2016-11-17 05:53:30', '2016-11-17 05:53:30'),
+(2356, 'dia_midv', 'dia_midv', '2016-11-17 05:54:53', '2016-11-17 05:54:53'),
+(2357, 'uiuiu', 'uiuiu', '2016-11-30 09:02:21', '2016-11-30 09:02:21');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+`id` int(10) unsigned NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `first_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `last_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `cache`
+--
+ALTER TABLE `cache`
+ ADD UNIQUE KEY `cache_key_unique` (`key`);
+
+--
+-- Indexes for table `campaigns`
+--
+ALTER TABLE `campaigns`
+ ADD UNIQUE KEY `campaigns_campaign_id_unique` (`campaign_id`);
+
+--
+-- Indexes for table `click_logs`
+--
+ALTER TABLE `click_logs`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `click_logs_archive`
+--
+ALTER TABLE `click_logs_archive`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `follo_data`
+--
+ALTER TABLE `follo_data`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `password_resets`
+--
+ALTER TABLE `password_resets`
+ ADD KEY `password_resets_email_index` (`email`), ADD KEY `password_resets_token_index` (`token`);
+
+--
+-- Indexes for table `permissions`
+--
+ALTER TABLE `permissions`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `permission_role`
+--
+ALTER TABLE `permission_role`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `provider_ip_table`
+--
+ALTER TABLE `provider_ip_table`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `provider_sms_data`
+--
+ALTER TABLE `provider_sms_data`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `roles`
+--
+ALTER TABLE `roles`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `role_user`
+--
+ALTER TABLE `role_user`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `secure_bill_data`
+--
+ALTER TABLE `secure_bill_data`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `secure_bill_data_prbt`
+--
+ALTER TABLE `secure_bill_data_prbt`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `templates`
+--
+ALTER TABLE `templates`
+ ADD PRIMARY KEY (`tmp_id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `users_email_unique` (`email`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `campaigns`
+--
+ALTER TABLE `campaigns`
+MODIFY `campaign_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=135;
+--
+-- AUTO_INCREMENT for table `click_logs`
+--
+ALTER TABLE `click_logs`
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4267489;
+--
+-- AUTO_INCREMENT for table `click_logs_archive`
+--
+ALTER TABLE `click_logs_archive`
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `follo_data`
+--
+ALTER TABLE `follo_data`
+MODIFY `id` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=164412;
+--
+-- AUTO_INCREMENT for table `permissions`
+--
+ALTER TABLE `permissions`
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `permission_role`
+--
+ALTER TABLE `permission_role`
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `provider_ip_table`
+--
+ALTER TABLE `provider_ip_table`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `provider_sms_data`
+--
+ALTER TABLE `provider_sms_data`
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `roles`
+--
+ALTER TABLE `roles`
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `role_user`
+--
+ALTER TABLE `role_user`
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `secure_bill_data`
+--
+ALTER TABLE `secure_bill_data`
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `secure_bill_data_prbt`
+--
+ALTER TABLE `secure_bill_data_prbt`
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `templates`
+--
+ALTER TABLE `templates`
+MODIFY `tmp_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2358;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

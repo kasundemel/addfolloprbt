@@ -1,0 +1,67 @@
+ @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+ .button{
+ 	height:40px;
+ 	width:100%;
+ 	color:white;
+ 	background-color:#1871F7;
+ 	padding-right:0px;
+ 	padding-left:0px;
+ }
+.menubtn{
+	padding-right:0px;
+ 	padding-left:0px;	
+}
+.menu{
+	padding-top:20px;
+	padding-bottom:20px;
+
+}
+.form-control{
+	padding:0px;
+	border:0px;
+}
+.text{
+	width:60%;
+	height:100%;
+	padding:5px;
+}
+.submit{
+	color:white;
+	background-color:blue;
+	width:120px;
+	height:45px;
+}
+.file{
+	width:300px;
+	height:50px;
+	font-size:18px;
+}
+.label{
+	font-size:18px;
+}
+.dropdown{
+	width:360px;
+	height:31px;
+	font-size:20px;
+	text-align:center;
+}
+
+.deletebtn{
+	color:white;
+	background-color:blue;
+	width:100px;
+	height:40px;
+	align-top:20px;
+}
+.dbtn{
+	padding-top:30px;
+}
+hr{
+	border:1px;
+	width:100%;
+}
+.view_url{
+  color: blue;
+  
+}
